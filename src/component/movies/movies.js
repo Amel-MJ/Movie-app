@@ -1,31 +1,12 @@
-import React, { Component } from "react";
-import "./movies.css";
+import React, { Component } from 'react'
 
-
-
-class movies extends Component {
-  state = {
-    item: "",
-    formFilm: []
-  };
-
-  handlAdd = () => {
-    this.setState({
-      formFilm: [...this.state.formFilm, { input: this.state }.item]
-    });
-  };
-
+ class movies extends Component {
   render() {
     return (
       <div>
-        <div>
-          <button onClick={this.handlAdd}>+</button>
-        </div>
-        <form>
-           
-        </form>
+        
       </div>
-    );
+    )
   }
 }
-export default movies;
+export default movies 
