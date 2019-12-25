@@ -21,7 +21,7 @@ handledSearch=(e)=>{
           placeholder="input search text"
           enterButton="Search"
           size="large"
-        onChange={this.handledSearch}
+          onChange={this.handledSearch}
         />
       </div>
     );

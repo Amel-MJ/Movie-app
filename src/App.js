@@ -12,8 +12,7 @@ class App extends React.Component {
     newInput:"",
     movieList,    
     newFilm:[{lien:"",name:"",rate:""}],
-    
-      
+       
   }
  
   handleadd = (lien, name, rate) => {
@@ -33,10 +32,7 @@ class App extends React.Component {
    
   }
 
-  test=(test)=>{
-alert(test)
-  }
-  
+   
   render(){
 
     return (

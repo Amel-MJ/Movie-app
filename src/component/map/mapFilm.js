@@ -1,5 +1,5 @@
 import React from "react";
-import { Card} from "antd";
+import { Card,Rate} from "antd";
 
 
 
@@ -23,7 +23,11 @@ function mapFilm (props)  {
         >
           <Meta title={el.name}  />
           <hr/>
-          <span>{el.rate}</span>
+          <span>
+          <Rate
+                
+                value={el.rate}
+              /></span>
         </Card>
       ))}
     </div>
