@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Card,Input } from "antd";
+import React from "react";
+import { Card} from "antd";
 
 
 
 const { Meta } = Card;
-const mapFilm = props => {
+function mapFilm (props)  {
   return (
     <div
       style={{
@@ -14,7 +14,8 @@ const mapFilm = props => {
         marginTop: "50px"
       }}
     >
-      {props.movieList.map((el, i) => (
+      {
+      props.movieList.filter(el=>el.name.toLowerCase().includes(props.newInput.toLowerCase())).map((el, i) => (
         <Card
           hoverable
           style={{ width: 240, margin:23 }}
