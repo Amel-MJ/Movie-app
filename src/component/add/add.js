@@ -7,7 +7,7 @@ class add extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { lien: "", name: "", rate: 0, visible: false, value: 0 };
+    this.state = { lien: "", name: "", rate:"", visible: false, value: 0 };
   }
   showModal = () => {
     this.setState({
@@ -18,7 +18,9 @@ class add extends Component {
   handleOk = e => {
     console.log(e);
     this.setState({
-      visible: false
+      visible: false,
+      lien: "", name: "", rate:""
+      
     });
   };
 
@@ -61,7 +63,7 @@ class add extends Component {
         >
           <div className="example-input">
             <Input
-              placeholder="Lien de film"
+              placeholder="Lien d'affiche de film"
               onChange={v => this.setState({ lien: v.target.value })}
               value={this.state.lien}
             />
