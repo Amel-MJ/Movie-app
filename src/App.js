@@ -35,6 +35,7 @@ class App extends React.Component {
   };
 
   render() {
+    const {stars}=this.state
     return (
       <div
       // style={{
@@ -46,7 +47,7 @@ class App extends React.Component {
             handelSearch={this.handelSearch}
             newInput={this.state.newInput}
           />
-          <Rate handledRate={this.handledRate} />
+          <Rate stars={stars} handledRate={this.handledRate} />
         </div>
 
         {/*<Search objectSearch={handelSearch:this.handelSearch, newInput:this.state.newInput}  />*/}

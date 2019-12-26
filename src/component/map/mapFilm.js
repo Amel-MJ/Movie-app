@@ -2,7 +2,38 @@ import React from "react";
 import { Card, Rate } from "antd";
 
 const { Meta } = Card;
-function mapFilm(props) {
+function MapFilm(props) {
+
+   const filtrerParID=(el)=> {
+
+if(props.stars !=="" && props.stars !==""){
+  return el.rate.includes(props.stars) && el.name.toLowerCase().includes(props.newInput.toLowerCase())
+}
+else if(props.stars !==""){
+  return el.rate.includes(props.stars) 
+}
+else if(props.newInput !==""){
+  return el.name.toLowerCase().includes(props.newInput.toLowerCase())
+}
+
+else{
+
+}
+
+      return props.stars !==""? el.rate.includes(props.stars) : el.name.toLowerCase().includes(props.newInput.toLowerCase())
+    
+    
+   
+     
+  }
+  
+  const arrByID = props.movieList.filter(filtrerParID);
+  
+  console.log('Tableau filtré\n', arrByID);
+
+
+
+  ////////////////////////////////
   return (
     <div
       style={{
@@ -11,13 +42,8 @@ function mapFilm(props) {
         flexWrap: "wrap",
         marginTop: "50px"
       }}
-    >
-      {props.movieList
-        .filter(el =>
-          el.name.toLowerCase().includes(props.newInput.toLowerCase())
-        )
-       // .filter(el => el.rate.includes(props.stars))
-        .map((el, i) => (
+    >{/**/}
+      {arrByID.map((el, i) => (
           <Card
             hoverable
             style={{ width: 240, margin: 23 }}
@@ -34,4 +60,4 @@ function mapFilm(props) {
   );
 }
 
-export default mapFilm;
+export default MapFilm;

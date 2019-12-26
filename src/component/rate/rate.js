@@ -14,7 +14,7 @@ export default class rate extends Component {
                  <p>Minimum Rating</p>
               <Rate
                onChange={this.handledRate}
-             
+             value={this.props.stars}
               />
             </span>
             </div>
