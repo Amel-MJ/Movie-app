@@ -5,6 +5,7 @@ import Search from "./component/search/search";
 import MapFilm from "./component/map/mapFilm";
 import Add from "./component/add/add";
 import Rate from "./component/rate/rate";
+import Loading from "./component/Loading"
 
 class App extends React.Component {
   state = {
@@ -34,9 +35,18 @@ class App extends React.Component {
     });
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({isLoading:true})
+    }, 3000)
+  }
+
+
+
   render() {
     const {stars}=this.state
-    return (
+
+    return !this.state.isLoading?<Loading /> :(
       <div
       // style={{
       //width:"800px",
